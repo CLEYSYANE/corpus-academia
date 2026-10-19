@@ -1,0 +1,665 @@
+:root {
+    --fundo: #080b08;
+    --verde: #39f52d;
+    --texto: #f5f7f4;
+    --texto-secundario: #b7c0b5;
+    --linha: rgba(255, 255, 255, 0.13);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* Cabeçalho */
+
+.cabecalho {
+    min-height: 100px;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid var(--linha);
+}
+
+.logo{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu .ativo{
+    color: var(--verde);
+}
+
+/* Pagina Inicial */
+
+.inicio{
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding:  75px 10%;
+    background:
+    radial-gradient(
+            ellipse at 80% 50%,
+            #173018 0%,
+            #0b100b 32%,
+            var(--fundo) 68%
+        ); ;
+}
+
+.inicio-conteudo{
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+}
+
+.etiqueta{
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+
+}
+
+h1{
+    font-size:60px;
+    line-height: 1.08;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+h1 span,
+.sobre h2 span {
+    color: var(--verde);
+}
+
+.frase{
+    color: var(--texto-secundario);
+    font-size: 19px;
+    margin: 24px 00 30px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 16px 21px;
+    background: var(--verde);
+    color: #061005;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #70ff65;
+    transform: translateY(-2px);
+}
+
+.circulo-decorativo{
+    position: absolute;
+    right: 12%;
+    top: 20%;
+}
+.peso {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 180px 180px 20px 20px;
+}
+
+/* Planos*/
+
+.plans{
+    padding: 100px 8%;
+    background-color: var(--fundo);
+}
+
+.section-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.eyebrow{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+}
+
+.eyebrow span{
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background: #8bc34a;
+}
+
+.section-heading h2{
+    margin: 0;
+    font-size:clamp(36px, 6vw, 64px);
+    line-height: 1;
+}
+
+.section-heading h2 em{
+    color: var(--verde);
+    font-style: normal;
+}
+
+.plan-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.plan-card{
+    position: relative;
+    padding: 32px;
+    border: 1px solid #deded7;
+    border-radius: 16px;
+    background-color: var(--fundo);
+}
+
+.plan-card.featured {
+  border: 2px solid #8bc34a;
+}
+
+.plan-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.plan-label,
+.feature-badge{
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.plan-card h3{
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.plan-description{
+    margin: 0 0 24px;
+    color: #39f52d;
+}
+
+.price{
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.price small{
+    font-size: 16px;
+}
+
+.price strong{
+    font-size: 48px;
+    line-height: 1;
+}
+
+.price span,
+.price-note {
+  color: #777;
+}
+
+.plan-card ul{
+    display: grid;
+    gap: 12px;
+    margin: 0 0 28px;
+    padding-left: 20px;
+}
+
+.feature-badge{
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #8bc34a;
+}
+
+/* Sobre nos*/
+.sobre{
+    max-width: 1000px;
+    margin: auto;
+    padding: 90px 28px 100px;
+}
+
+.sobre h2{
+    font-size: clamp(30px, 4.4vw, 50px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+}
+
+.sobre p:not(.etiqueta){
+    max-width: 760px;
+    color: var(--texto-secundario);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+ 
+/*Footer*/
+footer {
+    background: #050705;
+    color: #ffffff;
+}
+
+.footer-contact{
+    background: #080b08;
+    padding: 30px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #202820;
+}
+
+.contacto{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contacto i{
+    font-size: 24px;
+}
+
+.contacto h3{
+    color: #39f52d;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.contacto p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.contacto i:hover {
+    color: #39f52d;
+}
+
+
+.footer-imagem {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.footer-imagem img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.copyright {
+    background: #050705;
+    color: #929a90;
+    text-align: center;
+    padding: 18px 12px;
+    font-size: 12px;
+    border-top: 2px solid #39f52d;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - TABLETS E CELULARES
+   ========================================= */
+
+/* Tablets e telas menores */
+@media screen and (max-width: 1024px) {
+
+    .cabecalho {
+        padding: 20px 5%;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .inicio {
+        padding: 60px 6%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .circulo-decorativo {
+        right: 5%;
+    }
+
+    .peso {
+        max-width: 350px;
+    }
+
+    .plans {
+        padding: 75px 5%;
+    }
+
+    .plan-card {
+        padding: 25px;
+    }
+
+    .footer-contact {
+        padding: 30px 5%;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Cabeçalho */
+    .cabecalho {
+        min-height: auto;
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .logo {
+        width: 90px;
+        align-items: center;
+    }
+
+    .logo img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+
+    /* Página inicial */
+    .inicio {
+        min-height: auto;
+        padding: 55px 6% 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        background:
+            radial-gradient(
+                ellipse at 80% 70%,
+                #173018 0%,
+                #0b100b 35%,
+                var(--fundo) 75%
+            );
+    }
+
+    .inicio-conteudo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .etiqueta {
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: clamp(38px, 9vw, 52px);
+        line-height: 1.12;
+        letter-spacing: -1.5px;
+    }
+
+    .frase {
+        font-size: 16px;
+        margin: 20px 0 25px;
+    }
+
+    .botao {
+        max-width: 100%;
+        padding: 14px 16px;
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .circulo-decorativo {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .peso {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 150px 150px 20px 20px;
+    }
+
+
+    /* Planos */
+    .plans {
+        padding: 60px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(34px, 8vw, 48px);
+    }
+
+    .eyebrow {
+        font-size: 10px;
+    }
+
+    .plan-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .plan-card {
+        padding: 25px 22px;
+        border-radius: 12px;
+    }
+
+    .plan-card h3 {
+        font-size: 25px;
+    }
+
+    .plan-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .price strong {
+        font-size: 42px;
+    }
+
+    .plan-card ul {
+        gap: 12px;
+        padding-left: 18px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .feature-badge {
+        right: 15px;
+        font-size: 9px;
+        padding: 7px 10px;
+    }
+
+
+    /* Sobre nós */
+    .sobre {
+        padding: 60px 6%;
+    }
+
+    .sobre h2 {
+        font-size: clamp(29px, 7vw, 42px);
+        letter-spacing: -1px;
+    }
+
+    .sobre p:not(.etiqueta) {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* Rodapé e contatos */
+    .footer-contact {
+        padding: 35px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .footer-contact > h2 {
+        font-size: 22px;
+    }
+
+    .contacto {
+        align-items: flex-start;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .contacto i {
+        font-size: 22px;
+        min-width: 24px;
+        margin-top: 3px;
+    }
+
+    .contacto h3 {
+        font-size: 14px;
+    }
+
+    .contacto p {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-imagem img {
+        width: 100%;
+        height: auto;
+    }
+
+    .copyright {
+        padding: 18px 15px;
+        font-size: 10px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================
+   CELULARES PEQUENOS
+   ========================================= */
+
+@media screen and (max-width: 380px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .botao {
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .plan-card {
+        padding: 24px 17px;
+    }
+
+    .feature-badge {
+        font-size: 8px;
+        right: 10px;
+    }
+
+    .contacto p {
+        font-size: 13px;
+    }
+}
+
